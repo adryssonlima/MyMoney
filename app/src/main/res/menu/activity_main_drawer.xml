@@ -11,9 +11,13 @@
             android:icon="@drawable/ic_menu_attach_money"
             android:title="Receitas" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:id="@+id/nav_money_off"
+            android:icon="@drawable/ic_menu_money_off"
             android:title="Despesas" />
+        <item
+            android:id="@+id/nav_cloud"
+            android:icon="@drawable/ic_menu_cloud"
+            android:title="Sonhos" />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"

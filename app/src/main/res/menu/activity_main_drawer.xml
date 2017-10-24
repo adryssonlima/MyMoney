@@ -18,22 +18,18 @@
             android:id="@+id/nav_cloud"
             android:icon="@drawable/ic_menu_cloud"
             android:title="Sonhos" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Configurações">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/nav_label"
+                android:icon="@drawable/ic_menu_label"
+                android:title="Categorias" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_ajustes"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Ajustes" />
         </menu>
     </item>
 

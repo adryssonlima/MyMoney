@@ -86,6 +86,8 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_money_off) {
 
+        } else if (id == R.id.nav_reports) {
+
         } else if (id == R.id.nav_cloud) {
 
         } else if (id == R.id.nav_label) {

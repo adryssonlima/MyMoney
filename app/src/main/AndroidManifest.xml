@@ -25,6 +25,14 @@
         <activity
             android:name=".DespesaActivity"
             android:label="@string/title_activity_despesa"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ReceitaActivity"
+            android:label="@string/title_activity_receita"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CategoriaActivity"
+            android:label="@string/title_activity_categoria"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

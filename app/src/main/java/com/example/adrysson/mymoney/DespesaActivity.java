@@ -31,10 +31,9 @@ public class DespesaActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        dateView = (TextView) findViewById(R.id.textView3);
+        dateView = (TextView) findViewById(R.id.button1);
         calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
-
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
         showDate(year, month+1, day);
@@ -53,7 +52,7 @@ public class DespesaActivity extends AppCompatActivity {
     @SuppressWarnings("deprecation")
     public void setDate(View view) {
         showDialog(999);
-        Toast.makeText(getApplicationContext(), "ca",
+        Toast.makeText(getApplicationContext(), "Selecione um dia",
                 Toast.LENGTH_SHORT)
                 .show();
     }

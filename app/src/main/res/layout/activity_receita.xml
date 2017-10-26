@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.adrysson.mymoney.ReceitaActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_receita" />
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal" >
+
+        <TableLayout
+            android:id="@+id/table_despesa"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:id="@+id/table_despesa_line0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="60dp" >
+                <TextView
+                    android:id="@+id/textViewValor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Valor:"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/table_despesa_line1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+                <EditText
+                    android:id="@+id/editText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="20"
+                    android:textSize="18dp"
+                    android:text=""
+                    android:inputType="numberDecimal" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/table_despesa_line2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="15dp" >
+
+                <TextView
+                    android:id="@+id/textViewCategoria"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Categoria:"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+            <TableRow
+                android:id="@+id/table_despesa_line3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+                <Spinner
+                    android:id="@+id/spinner_categoria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:clickable="true"
+                    android:entries="@array/array_categorias" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/table_despesa_line4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="15dp" >
+
+                <TextView
+                    android:id="@+id/textViewData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Data:"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+            <TableRow
+                android:id="@+id/table_despesa_line5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <EditText
+                    android:id="@+id/button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="20"
+                    android:textSize="18dp"
+                    android:text=""
+                    android:onClick="setDate"
+                    android:inputType="date" />
+
+            </TableRow>
+            <TableRow
+                android:id="@+id/table_despesa_line6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="15dp" >
+                <TextView
+                    android:id="@+id/textViewDescricao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Descrição:"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/table_despesa_line7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+                <EditText
+                    android:id="@+id/editText5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:text=""
+                    android:textSize="18dp"
+                    android:inputType="textMultiLine" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/table_despesa_line8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="15dp" >
+                <CheckBox
+                    android:id="@+id/checkBoxRecebido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recebido" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/table_despesa_line9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="15dp" >
+                <CheckBox
+                    android:id="@+id/checkBoxReceitaFixa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Receita fixa" />
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="@android:color/holo_green_dark"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+</android.support.design.widget.CoordinatorLayout>

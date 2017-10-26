@@ -86,7 +86,8 @@ public class MainActivity extends AppCompatActivity
 
                 break;
             case R.id.nav_attach_money:
-
+                Intent intentReceita = new Intent(this, ReceitaActivity.class);
+                startActivity(intentReceita);
                 break;
             case R.id.nav_money_off:
                 Intent intentDespesa = new Intent(this, DespesaActivity.class);
@@ -99,7 +100,8 @@ public class MainActivity extends AppCompatActivity
 
                 break;
             case R.id.nav_label:
-
+                Intent intentCategoria = new Intent(this, CategoriaActivity.class);
+                startActivity(intentCategoria);
                 break;
             case R.id.nav_ajustes:
 

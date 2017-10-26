@@ -1,5 +1,6 @@
 package com.example.adrysson.mymoney;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -80,20 +81,32 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_principal) {
-            // Handle the camera action
-        } else if (id == R.id.nav_attach_money) {
+        switch (id) {
+            case R.id.nav_principal:
 
-        } else if (id == R.id.nav_money_off) {
+                break;
+            case R.id.nav_attach_money:
 
-        } else if (id == R.id.nav_reports) {
+                break;
+            case R.id.nav_money_off:
+                Intent intentDespesa = new Intent(this, DespesaActivity.class);
+                startActivity(intentDespesa);
+                break;
+            case R.id.nav_reports:
 
-        } else if (id == R.id.nav_cloud) {
+                break;
+            case R.id.nav_cloud:
 
-        } else if (id == R.id.nav_label) {
+                break;
+            case R.id.nav_label:
 
-        } else if (id == R.id.nav_ajustes) {
+                break;
+            case R.id.nav_ajustes:
 
+                break;
+            default:
+                Intent intentMain = new Intent(this, MainActivity.class);
+                startActivity(intentMain);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -42,10 +42,10 @@
                 android:layout_marginTop="50dp">
 
                 <ListView
+                    android:id="@+id/list_categoria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:entries="@array/array_categorias" />
+                    android:layout_weight="1" />
             </TableRow>
 
         </TableLayout>

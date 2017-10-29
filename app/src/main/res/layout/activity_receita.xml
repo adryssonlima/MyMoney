@@ -87,8 +87,7 @@
                     android:id="@+id/spinner_categoria"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:clickable="true"
-                    android:entries="@array/array_categorias" />
+                    android:clickable="true" />
             </TableRow>
             <TableRow
                 android:id="@+id/table_despesa_line4"

@@ -8,13 +8,25 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Calendar;
 
 public class ReceitaActivity extends AppCompatActivity {
+
+    private String itensSpinner[] = {
+        "Alimentação",
+        "Educação",
+        "Moradia",
+        "Pagamentos",
+        "Roupa",
+        "Saúde",
+        "Transporte"
+    };
 
     private DatePicker datePicker;
     private Calendar calendar;
@@ -27,6 +39,12 @@ public class ReceitaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_receita);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        // Adapatador do spinner
+        Spinner spinner = (Spinner) findViewById(R.id.spinner_categoria);
+        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, itensSpinner);
+        adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adaptador);
 
         dateView = (TextView) findViewById(R.id.button1);
         calendar = Calendar.getInstance();

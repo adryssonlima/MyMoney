@@ -19,6 +19,16 @@ import java.util.Calendar;
 
 public class DespesaActivity extends AppCompatActivity {
 
+    private String itensSpinner[] = {
+        "Alimentação",
+        "Educação",
+        "Moradia",
+        "Pagamentos",
+        "Roupa",
+        "Saúde",
+        "Transporte"
+    };
+
     private DatePicker datePicker;
     private Calendar calendar;
     private TextView dateView;
@@ -30,6 +40,12 @@ public class DespesaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_despesa);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        // Adapatador do spinner
+        Spinner spinner = (Spinner) findViewById(R.id.spinner_categoria);
+        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, itensSpinner);
+        adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adaptador);
 
         dateView = (TextView) findViewById(R.id.button1);
         calendar = Calendar.getInstance();

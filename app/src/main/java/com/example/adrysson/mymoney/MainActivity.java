@@ -97,7 +97,8 @@ public class MainActivity extends AppCompatActivity
 
                 break;
             case R.id.nav_cloud:
-
+                Intent intentSonhos = new Intent(this, SonhosActivity.class);
+                startActivity(intentSonhos);
                 break;
             case R.id.nav_label:
                 Intent intentCategoria = new Intent(this, CategoriaActivity.class);

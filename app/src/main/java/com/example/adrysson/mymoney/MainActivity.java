@@ -90,8 +90,8 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intentReceita);
                 break;
             case R.id.nav_money_off:
-                Intent intentDespesa = new Intent(this, DespesaActivity.class);
-                startActivity(intentDespesa);
+                Intent intentDespesaList = new Intent(this, DespesaListActivity.class);
+                startActivity(intentDespesaList);
                 break;
             case R.id.nav_reports:
 

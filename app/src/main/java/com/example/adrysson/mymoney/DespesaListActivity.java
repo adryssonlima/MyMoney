@@ -15,12 +15,12 @@ import android.widget.Toast;
 public class DespesaListActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private String itensList[] = {
-        "29/10/2017 - Pagamento da Academia",
-        "29/10/2017 - Pagamento do Cartão de crédito",
-        "30/10/2017 - Uber",
-        "31/10/2017 - Créditos no Smatrphone",
-        "31/10/2017 - Roupa para o Natal",
-        "31/10/2017 - Ingresso para o show do Metallica"
+        "29/10/2017 - Pagamento da Academia - R$ 89,00",
+        "29/10/2017 - Pagamento do Cartão de crédito - R$ 600,00",
+        "30/10/2017 - Uber - R$ 25,00",
+        "31/10/2017 - Créditos no Smatrphone - R$ 30,00",
+        "31/10/2017 - Roupa para o Natal - R$ 300,00",
+        "31/10/2017 - Ingresso para o show do Metallica - R$ 250,00"
     };
 
     @Override

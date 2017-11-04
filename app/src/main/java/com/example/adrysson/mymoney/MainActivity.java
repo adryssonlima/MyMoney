@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -24,14 +25,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        initDashboard();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -41,6 +35,18 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    public void initDashboard() {
+        String saldo = "R$ 2456,00";
+        String receitas = "R$ 320,00";
+        String despesas = "R$ 256,00";
+        TextView saldoView = (TextView) findViewById(R.id.saldoConta);
+        saldoView.append(saldo);
+        TextView receitasView = (TextView) findViewById(R.id.receitas);
+        receitasView.append(receitas);
+        TextView despesasView = (TextView) findViewById(R.id.despesas);
+        despesasView.append(despesas);
     }
 
     @Override
@@ -86,8 +92,8 @@ public class MainActivity extends AppCompatActivity
 
                 break;
             case R.id.nav_attach_money:
-                Intent intentReceita = new Intent(this, ReceitaActivity.class);
-                startActivity(intentReceita);
+                Intent intentReceitaList = new Intent(this, ReceitaListActivity.class);
+                startActivity(intentReceitaList);
                 break;
             case R.id.nav_money_off:
                 Intent intentDespesaList = new Intent(this, DespesaListActivity.class);

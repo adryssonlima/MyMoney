@@ -17,5 +17,6 @@
     <string name="title_activity_sonhos">Sonhos</string>
     <string name="title_activity_cadastrar_sonho">Cadastrar Sonho</string>
     <string name="title_activity_despesa_list">DespesaListActivity</string>
+    <string name="title_activity_receita_list">ReceitaListActivity</string>
 
 </resources>

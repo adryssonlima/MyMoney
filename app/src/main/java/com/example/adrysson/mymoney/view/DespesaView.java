@@ -1,6 +1,7 @@
 package com.example.adrysson.mymoney.view;
 
 import android.content.Context;
+import android.database.Cursor;
 
 import com.example.adrysson.mymoney.controller.CategoriaController;
 import com.example.adrysson.mymoney.controller.DespesaController;
@@ -19,20 +20,17 @@ public class DespesaView {
     private Despesa despesa;
     private DespesaController despesaController;
 
-    public DespesaView(Context context, float valor, int categoria, Date data, String descricao, int recorrente) {
-        despesa = new Despesa(valor, categoria, data, descricao, recorrente);
+    public DespesaView(Context context) {
         despesaController = new DespesaController(context);
     }
 
-    public Array list() {
-        return despesaController.list();
+    public boolean list() {
+        return true;
     }
 
-    public String insert() {
-        if (despesaController.insert(despesa) )
-            return "Despesa cadastrada com sucesso!";
-        else
-            return "Erro ao cadastrar despesa!";
+    public boolean insert(float valor, String categoria, String data, String descricao, int recorrente) {
+        despesa = new Despesa(valor, categoria, data, descricao, recorrente);
+        return despesaController.insert(despesa);
     }
 
     public boolean update() {

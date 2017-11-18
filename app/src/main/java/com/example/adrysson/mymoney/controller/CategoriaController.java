@@ -2,6 +2,7 @@ package com.example.adrysson.mymoney.controller;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import com.example.adrysson.mymoney.model.Categoria;
 
@@ -22,8 +23,20 @@ public class CategoriaController {
         banco = new DataBaseCreate(context);
     }
 
-    public Array list() {
+    public Cursor list() {
+        db = banco.getReadableDatabase();
+        String[] campos = {
+                DataBaseCreate.TBL_CATEGORIAS_id,
+                DataBaseCreate.TBL_CATEGORIAS_nome
+        };
+        Cursor c = db.query(DataBaseCreate.TBL_CATEGORIAS, campos, null, null, null, null, null, null);
 
+        if(c != null)
+            c.moveToFirst();
+
+        db.close();
+
+        return c;
     }
 
     public boolean insert(Categoria categoria) {
@@ -36,11 +49,11 @@ public class CategoriaController {
     }
 
     public boolean update(Categoria categoria) {
-
+        return true;
     }
 
     public boolean delete(int id) {
-
+        return true;
     }
 
 }

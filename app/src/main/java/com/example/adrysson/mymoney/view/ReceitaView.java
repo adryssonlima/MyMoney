@@ -17,21 +17,18 @@ public class ReceitaView {
     private Receita receita;
     private ReceitaController receitaController;
 
-    public ReceitaView(Context context, float valor, int categoria, Date data,
-                       String descricao, int recebido, int receitaFixa) {
-        receita = new Receita(valor, categoria, data, descricao, recebido, receitaFixa);
+    public ReceitaView(Context context) {
         receitaController = new ReceitaController(context);
     }
 
-    public Array list() {
-        return receitaController.list();
+    public boolean list() {
+        return true;
     }
 
-    public String insert() {
-        if (receitaController.insert(receita) )
-            return "Receita cadastrada com sucesso!";
-        else
-            return "Erro ao cadastrar receita!";
+    public boolean insert(float valor, int categoria, Date data,
+                         String descricao, int recebido, int receitaFixa) {
+        receita = new Receita(valor, categoria, data, descricao, recebido, receitaFixa);
+        return receitaController.insert(receita);
     }
 
     public boolean update() {

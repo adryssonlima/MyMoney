@@ -2,6 +2,7 @@ package com.example.adrysson.mymoney;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,8 +15,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.adrysson.mymoney.helpers.DataBaseCreate;
+import com.example.adrysson.mymoney.view.CategoriaView;
 
 public class CategoriaActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
@@ -60,7 +65,16 @@ public class CategoriaActivity extends AppCompatActivity implements AdapterView.
             builder.setPositiveButton("Salvar", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    String m_Text = input.getText().toString();
+                    String nome = input.getText().toString();
+                    CategoriaView categoria = new CategoriaView(getBaseContext());
+                    if ( categoria.insert(nome) ) {
+                        finish(); // restarta a activity
+                        startActivity(getIntent());
+                    } else {
+                        Toast.makeText(getApplicationContext(),
+                                "Erro ao cadastrar categoria", Toast.LENGTH_LONG).show();
+                    }
+
                 }
             });
             builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {

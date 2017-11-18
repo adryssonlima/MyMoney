@@ -23,8 +23,8 @@ public class SonhoController {
         banco = new DataBaseCreate(context);
     }
 
-    public Array list() {
-
+    public boolean list() {
+        return true;
     }
 
     public boolean insert(Sonho sonho) {
@@ -43,10 +43,10 @@ public class SonhoController {
     }
 
     public boolean update(Sonho sonho) {
-
+        return true;
     }
 
     public boolean delete(int id) {
-
+        return true;
     }
 }

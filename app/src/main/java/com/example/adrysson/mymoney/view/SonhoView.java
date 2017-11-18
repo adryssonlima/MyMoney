@@ -16,21 +16,18 @@ public class SonhoView {
     private Sonho sonho;
     private SonhoController sonhoController;
 
-    public SonhoView(Context context, String descricao, String foto, int categoria, String motivacao, float valorTotal,
-                     float saldoInicial, float depositoMensal) {
-        sonho = new Sonho(descricao, foto, categoria, motivacao, valorTotal, saldoInicial, depositoMensal);
+    public SonhoView(Context context) {
         sonhoController = new SonhoController(context);
     }
 
-    public Array list() {
-        return sonhoController.list();
+    public boolean list() {
+        return true;
     }
 
-    public String insert() {
-        if (sonhoController.insert(sonho) )
-            return "Receita cadastrada com sucesso!";
-        else
-            return "Erro ao cadastrar receita!";
+    public boolean insert(String descricao, String foto, int categoria, String motivacao, float valorTotal,
+                         float saldoInicial, float depositoMensal) {
+        sonho = new Sonho(descricao, foto, categoria, motivacao, valorTotal, saldoInicial, depositoMensal);
+        return sonhoController.insert(sonho);
     }
 
     public boolean update() {

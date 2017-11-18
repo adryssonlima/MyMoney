@@ -22,8 +22,8 @@ public class ReceitaController {
         banco = new DataBaseCreate(context);
     }
 
-    public Array list() {
-
+    public boolean list() {
+        return true;
     }
 
     public boolean insert(Receita receita) {
@@ -41,11 +41,11 @@ public class ReceitaController {
     }
 
     public boolean update(Receita receita) {
-
+        return true;
     }
 
     public boolean delete(int id) {
-
+        return true;
     }
 
 

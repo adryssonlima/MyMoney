@@ -10,12 +10,12 @@ public class Despesa {
 
     private int id;
     private float valor;
-    private int categoria;
-    private Date data;
+    private String categoria;
+    private String data;
     private String descricao;
     private int recorrente;
 
-    public Despesa(float valor, int categoria, Date data, String descricao, int recorrente) {
+    public Despesa(float valor, String categoria, String data, String descricao, int recorrente) {
         this.valor = valor;
         this.categoria = categoria;
         this.data = data;
@@ -39,11 +39,11 @@ public class Despesa {
         this.valor = valor;
     }
 
-    public int getCategoria() {
+    public String getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(int categoria) {
+    public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
 
@@ -51,7 +51,7 @@ public class Despesa {
         return data.toString();
     }
 
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data = data;
     }
 

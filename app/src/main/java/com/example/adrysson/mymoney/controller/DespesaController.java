@@ -23,8 +23,8 @@ public class DespesaController {
         banco = new DataBaseCreate(context);
     }
 
-    public Array list() {
-
+    public boolean list() {
+        return true;
     }
 
     public boolean insert(Despesa despesa) {
@@ -42,10 +42,10 @@ public class DespesaController {
     }
 
     public boolean update(Despesa despesa) {
-
+        return true;
     }
 
     public boolean delete(int id) {
-
+        return true;
     }
 }

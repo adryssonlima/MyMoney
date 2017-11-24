@@ -33,11 +33,11 @@ public class DespesaView {
         return despesaController.insert(despesa);
     }
 
-    public boolean update() {
+    public boolean update(Despesa despesa) {
         return despesaController.update(despesa);
     }
 
-    public boolean delete() {
-        return despesaController.delete(despesa.getId());
+    public boolean delete(int id) {
+        return despesaController.delete(id);
     }
 }

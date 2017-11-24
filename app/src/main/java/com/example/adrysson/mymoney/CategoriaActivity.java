@@ -61,7 +61,7 @@ public class CategoriaActivity extends AppCompatActivity implements AdapterView.
             input.setInputType(InputType.TYPE_CLASS_TEXT);
             builder.setView(input);
 
-            // Set up the buttons
+            // INSERT
             builder.setPositiveButton("Salvar", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {

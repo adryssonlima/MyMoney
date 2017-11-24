@@ -9,13 +9,13 @@ public class Sonho {
     private int id;
     private String descricao;
     private String foto;
-    private int categoria;
+    private String categoria;
     private String motivacao;
     private float valorTotal;
     private float saldoInicial;
     private float depositoMensal;
 
-    public Sonho(String descricao, String foto, int categoria, String motivacao, float valorTotal,
+    public Sonho(String descricao, String foto, String categoria, String motivacao, float valorTotal,
                   float saldoInicial, float depositoMensal) {
         this.descricao = descricao;
         this.foto = foto;
@@ -50,11 +50,11 @@ public class Sonho {
         this.foto = foto;
     }
 
-    public int getCategoria() {
+    public String getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(int categoria) {
+    public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
 

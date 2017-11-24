@@ -66,7 +66,7 @@ public class DespesaActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //INSERT
                 TextView valorView = (TextView) findViewById(R.id.textViewValor);
                 float valor = Float.parseFloat(valorView.getText().toString());
                 TextView categoriaView = (TextView) findViewById(R.id.textViewCategoria);

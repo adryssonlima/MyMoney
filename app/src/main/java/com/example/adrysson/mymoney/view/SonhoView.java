@@ -24,17 +24,17 @@ public class SonhoView {
         return true;
     }
 
-    public boolean insert(String descricao, String foto, int categoria, String motivacao, float valorTotal,
-                         float saldoInicial, float depositoMensal) {
+    public boolean insert(String descricao, String foto, String categoria, String motivacao, float valorTotal,
+                          float saldoInicial, float depositoMensal) {
         sonho = new Sonho(descricao, foto, categoria, motivacao, valorTotal, saldoInicial, depositoMensal);
         return sonhoController.insert(sonho);
     }
 
-    public boolean update() {
+    public boolean update(Sonho sonho) {
         return sonhoController.update(sonho);
     }
 
-    public boolean delete() {
-        return sonhoController.delete(sonho.getId());
+    public boolean delete(int id) {
+        return sonhoController.delete(id);
     }
 }

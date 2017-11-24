@@ -49,11 +49,24 @@ public class CategoriaController {
     }
 
     public boolean update(Categoria categoria) {
-        return true;
+        ContentValues values = new ContentValues();
+        db = banco.getWritableDatabase();
+        values.put(DataBaseCreate.TBL_CATEGORIAS_nome, categoria.getNome());
+        String selection = "ID = ?";
+        String[] selectionArg = {Integer.toString(categoria.getId())};
+        long result = db.update(DataBaseCreate.TBL_CATEGORIAS, values, selection, selectionArg);
+        db.close();
+        return result == -1 ? false : true;
     }
 
     public boolean delete(int id) {
-        return true;
+        ContentValues values = new ContentValues();
+        db = banco.getWritableDatabase();
+        String selection = "ID = ?";
+        String[] selectionArg = {Integer.toString(id)};
+        long result = db.delete(DataBaseCreate.TBL_CATEGORIAS, selection, selectionArg);
+        db.close();
+        return result == -1 ? false : true;
     }
 
 }

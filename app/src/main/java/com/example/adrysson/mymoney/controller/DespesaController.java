@@ -2,6 +2,7 @@ package com.example.adrysson.mymoney.controller;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.ContactsContract;
 
@@ -23,8 +24,24 @@ public class DespesaController {
         banco = new DataBaseCreate(context);
     }
 
-    public boolean list() {
-        return true;
+    public Cursor list() {
+        db = banco.getReadableDatabase();
+        String[] campos = {
+                DataBaseCreate.TBL_DESPESAS_id,
+                DataBaseCreate.TBL_DESPESAS_descricao,
+                DataBaseCreate.TBL_DESPESAS_categoria,
+                DataBaseCreate.TBL_DESPESAS_data,
+                DataBaseCreate.TBL_DESPESAS_valor,
+                DataBaseCreate.TBL_DESPESAS_recorrente
+        };
+        Cursor c = db.query(DataBaseCreate.TBL_DESPESAS, campos, null, null, null, null, null, null);
+
+        if(c != null)
+            c.moveToFirst();
+
+        db.close();
+
+        return c;
     }
 
     public boolean insert(Despesa despesa) {
@@ -42,10 +59,27 @@ public class DespesaController {
     }
 
     public boolean update(Despesa despesa) {
-        return true;
+        ContentValues values = new ContentValues();
+        db = banco.getWritableDatabase();
+        values.put(DataBaseCreate.TBL_DESPESAS_descricao, despesa.getDescricao());
+        values.put(DataBaseCreate.TBL_DESPESAS_data, despesa.getData());
+        values.put(DataBaseCreate.TBL_DESPESAS_categoria, despesa.getCategoria());
+        values.put(DataBaseCreate.TBL_DESPESAS_valor, despesa.getValor());
+        values.put(DataBaseCreate.TBL_DESPESAS_recorrente, despesa.getRecorrente());
+        String selection = "ID = ?";
+        String[] selectionArg = {Integer.toString(despesa.getId())};
+        long result = db.update(DataBaseCreate.TBL_DESPESAS, values, selection, selectionArg);
+        db.close();
+        return result == -1 ? false : true;
     }
 
     public boolean delete(int id) {
-        return true;
+        ContentValues values = new ContentValues();
+        db = banco.getWritableDatabase();
+        String selection = "ID = ?";
+        String[] selectionArg = {Integer.toString(id)};
+        long result = db.delete(DataBaseCreate.TBL_DESPESAS, selection, selectionArg);
+        db.close();
+        return result == -1 ? false : true;
     }
 }

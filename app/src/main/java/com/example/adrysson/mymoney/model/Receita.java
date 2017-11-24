@@ -10,13 +10,13 @@ public class Receita {
 
     private int id;
     private float valor;
-    private int categoria;
-    private Date data;
+    private String categoria;
+    private String data;
     private String descricao;
     private int recebido;
     private int receitaFixa;
 
-    public Receita(float valor, int categoria, Date data, String descricao, int recebido, int receitaFixa) {
+    public Receita(float valor, String categoria, String data, String descricao, int recebido, int receitaFixa) {
         this.valor = valor;
         this.categoria = categoria;
         this.data = data;
@@ -41,19 +41,19 @@ public class Receita {
         this.valor = valor;
     }
 
-    public int getCategoria() {
+    public String getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(int categoria) {
+    public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
 
     public String getData() {
-        return data.toString();
+        return data;
     }
 
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data = data;
     }
 

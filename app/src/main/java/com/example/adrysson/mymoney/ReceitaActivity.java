@@ -9,10 +9,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.adrysson.mymoney.view.ReceitaView;
 
 import java.util.Calendar;
 
@@ -57,8 +60,36 @@ public class ReceitaActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                //INSERT
+                TextView valorView = (TextView) findViewById(R.id.textViewValor);
+                float valor = Float.parseFloat(valorView.getText().toString());
+                TextView categoriaView = (TextView) findViewById(R.id.textViewCategoria);
+                String categoria = categoriaView.getText().toString();
+                TextView dataView = (TextView) findViewById(R.id.textViewData);
+                String data = dataView.getText().toString();
+                TextView descricaoView = (TextView) findViewById(R.id.textViewDescricao);
+                String descricao = descricaoView.getText().toString();
+                TextView recebidoView = (CheckBox) findViewById(R.id.checkBoxRecebido);
+                int recebido;
+                if (recebidoView.isEnabled())
+                    recebido = 1;
+                else
+                    recebido = 0;
+                TextView recorrenteView = (CheckBox) findViewById(R.id.checkBoxReceitaFixa);
+                int recorrente;
+                if (recorrenteView.isEnabled())
+                    recorrente = 1;
+                else
+                    recorrente = 0;
+
+                ReceitaView receita = new ReceitaView(getBaseContext());
+                if (receita.insert(valor, categoria, data, descricao, recebido, recorrente)) {
+                    finish(); // restarta a activity
+                    startActivity(getIntent());
+                } else {
+                    Toast.makeText(getApplicationContext(),
+                            "Erro ao cadastrar receita", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }

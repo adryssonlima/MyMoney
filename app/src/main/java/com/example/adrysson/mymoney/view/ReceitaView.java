@@ -25,17 +25,17 @@ public class ReceitaView {
         return true;
     }
 
-    public boolean insert(float valor, int categoria, Date data,
-                         String descricao, int recebido, int receitaFixa) {
+    public boolean insert(float valor, String categoria, String data,
+                          String descricao, int recebido, int receitaFixa) {
         receita = new Receita(valor, categoria, data, descricao, recebido, receitaFixa);
         return receitaController.insert(receita);
     }
 
-    public boolean update() {
+    public boolean update(Receita receita) {
         return receitaController.update(receita);
     }
 
-    public boolean delete() {
-        return receitaController.delete(receita.getId());
+    public boolean delete(int id) {
+        return receitaController.delete(id);
     }
 }
